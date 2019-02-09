@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="content">
+      <router-view/>
     </div>
-    <router-view/>
+    <Nav />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+import Nav from '@/components/Nav.vue';
+export default Vue.extend({
+  name: 'app',
+  components: {
+    Nav,
+  },
+})
+</script>
+
 
 <style lang="scss">
 html, body {
@@ -16,5 +27,19 @@ html, body {
 }
 #app {
   --primary-color: #2196F3;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // overflow: auto;
 }
+#content {
+  overflow: auto;
+  flex: 1;
+}
+#nav {
+  height: 64px;
+  background-color: gray;
+}
+
 </style>
