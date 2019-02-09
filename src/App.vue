@@ -9,6 +9,11 @@
 </template>
 
 <style lang="scss">
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 #app {
   --primary-color: #2196F3;
 }
